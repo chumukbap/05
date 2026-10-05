@@ -6,34 +6,33 @@ int main(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    int num1, num2;
-    char op;
+    int answer = 59;
+    int guess;
+    int count = 0;
 
-    printf("수식을 입력하시오: ");
-    scanf("%d %c %d", &num1, &op, &num2);
-
-    switch (op)
+    do
     {
-        case '+':
-            printf("%d + %d = %d\n", num1, num2, num1 + num2);
-            break;
+        printf("정답을 입력하시오: ");
+        scanf("%d", &guess);
 
-        case '-':
-            printf("%d - %d = %d\n", num1, num2, num1 - num2);
-            break;
+        count++;
 
-        case '*':
-            printf("%d * %d = %d\n", num1, num2, num1 * num2);
-            break;
+        if (guess > answer)
+        {
+            printf("정답보다 큽니다.\n");
+        }
+        else if (guess < answer)
+        {
+            printf("정답보다 작습니다.\n");
+        }
+        else
+        {
+            printf("정답입니다!\n");
+        }
 
-        case '/':
-            printf("%d / %d = %d\n", num1, num2, num1 / num2);
-            break;
+    } while (guess != answer);
 
-        default:
-            printf("잘못된 연산자입니다.\n");
-            break;
-    }
+    printf("시도 횟수는 %d번입니다.\n", count);
 
     return 0;
 }
