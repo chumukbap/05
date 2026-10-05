@@ -6,17 +6,20 @@ int main(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    int num;
+    char c;
+    int num = 0;
 
-    printf("정수를 입력하시오: ");
-    scanf("%d", &num);
+    printf("문자열을 입력하시오: ");
 
-    if (num < 0)
+    while ((c = getchar()) != '\n')
     {
-        num = -num;
+        if (c >= '0' && c <= '9')
+        {
+            num++;
+        }
     }
 
-    printf("절대값은 %d 입니다.\n", num);
+    printf("숫자의 개수는 %d개입니다.\n", num);
 
     return 0;
 }
