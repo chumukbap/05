@@ -6,20 +6,19 @@ int main(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    char c;
-    int num = 0;
+    int num;
+    int sum = 0;
+    int i;
 
-    printf("문자열을 입력하시오: ");
+    printf("정수를 입력하시오: ");
+    scanf("%d", &num);
 
-    while ((c = getchar()) != '\n')
+    for (i = 1; i <= num; i++)
     {
-        if (c >= '0' && c <= '9')
-        {
-            num++;
-        }
+        sum = sum + i;
     }
 
-    printf("숫자의 개수는 %d개입니다.\n", num);
+    printf("1부터 %d까지의 합은 %d입니다.\n", num, sum);
 
     return 0;
 }
